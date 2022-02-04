@@ -1,0 +1,3 @@
+[submodule "inventory-web"]
+	path = inventory-web
+	url = https://git.enigmacamp.com/enigma-trainers/reactjs/inventory-web

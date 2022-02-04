@@ -1,0 +1,29 @@
+version: '3'
+services:
+  frontend:
+    build: ./inventory-web
+    image: "com.enigma/inventory-web"
+  backend:
+    build: ./inventory-api
+    image: "com.enigma/inventory-api"
+    restart: on-failure
+    environment:
+      - DB_HOST=db
+  reverse-proxy:
+    build: ./reverse-proxy
+    image: "com.enigma/reverse-proxy"
+    restart: on-failure
+    ports:
+      - "80:80"
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'inventory'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'user123'
+      MYSQL_ROOT_PASSWORD: 'root123'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'

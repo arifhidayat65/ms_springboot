@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <actionName>CUSTOM-Sonar</actionName>
+        <displayName>Sonar</displayName>
+        <goals>
+            <goal>sonar:sonar</goal>
+        </goals>
+        <properties>
+            <sonar.login>f308b62069f0d5fdd25a7be176699dca6dfdff7c</sonar.login>
+        </properties>
+    </action>
+</actions>
